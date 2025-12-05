@@ -1,52 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Почему я выбрал тебя</title>
+
+    <!-- Романтичный Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: "Helvetica", "Arial", sans-serif;
-            background: linear-gradient(180deg, #ffdce5, #ffeef3);
-            color: #4a2c2c;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ffb6d5, #ffd9e8, #fff1f5);
+            background-size: 300% 300%;
+            animation: gradientMove 8s ease infinite;
+            color: #5a2b37;
             text-align: center;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0 50%; }
         }
 
         .container {
             max-width: 600px;
             margin: auto;
-            padding: 20px;
+            padding: 25px;
         }
 
         h1 {
-            font-size: 2.2em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-size: 2.4em;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: #7a2a47;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            animation: fadeIn 1.5s ease;
         }
 
         .reason-box {
-            background: white;
-            margin: 15px 0;
-            padding: 18px;
-            border-radius: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            font-size: 1.1em;
-            animation: fadeIn 1s ease;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            margin: 18px 0;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            font-size: 1.15em;
+            line-height: 1.5em;
+            animation: floatUp 0.8s ease;
+            position: relative;
+        }
+
+        .reason-box::before {
+            content: "❤";
+            position: absolute;
+            font-size: 1.2em;
+            left: -12px;
+            top: -12px;
+            color: #ff6f9f;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.9; }
+        }
+
+        @keyframes floatUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(-15px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         .footer {
-            margin-top: 35px;
-            font-size: 1.2em;
-            opacity: 0.8;
+            margin-top: 40px;
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 600;
             padding-bottom: 40px;
+            color: #7a2a47;
+        }
+
+        .footer span {
+            color: #ff4d88;
+            font-size: 1.4em;
         }
     </style>
 </head>
@@ -54,15 +100,17 @@
     <div class="container">
         <h1>Почему я выбрал тебя</h1>
 
-        <div class="reason-box">1. Потому что рядом с тобой даже обычные моменты становятся особенными.</div>
-        <div class="reason-box">2. Потому что ты умеешь быть нежной и красивой даже тогда, когда думаешь, что не такая.</div>
-        <div class="reason-box">3. Потому что ты появляешься в моих мыслях чаще, чем я сам могу объяснить.</div>
-        <div class="reason-box">4. Потому что ты даёшь мне то чувство спокойного счастья, которое невозможно подделать.</div>
-        <div class="reason-box">5. Потому что твоё присутствие — даже на расстоянии — делает день теплее.</div>
-        <div class="reason-box">6. Потому что с тобой я чувствую, что могу быть настоящим.</div>
-        <div class="reason-box">7. Потому что ты стала человеком, о котором хочется заботиться.</div>
+        <div class="reason-box">1. Потому что рядом с тобой даже самые обычные моменты становятся особенными.</div>
+        <div class="reason-box">2. Потому что ты даже не замечаешь, насколько ты красивая — а я замечаю.</div>
+        <div class="reason-box">3. Потому что ты появляешься в моих мыслях чаще, чем любое другое имя.</div>
+        <div class="reason-box">4. Потому что ты даёшь мне то спокойное, честное счастье, которое невозможно подделать.</div>
+        <div class="reason-box">5. Потому что даже на расстоянии ты делаешь мой день теплее.</div>
+        <div class="reason-box">6. Потому что с тобой я могу быть собой — настоящим.</div>
+        <div class="reason-box">7. Потому что ты стала тем человеком, о котором хочется заботиться.</div>
 
-        <div class="footer">Спасибо тебе за наши три месяца 💗</div>
+        <div class="footer">
+            Спасибо тебе за наши <span>три месяца</span> 💗
+        </div>
     </div>
 </body>
 </html>
